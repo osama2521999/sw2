@@ -31,10 +31,10 @@
 	    		<div class="col-4 d-flex justify-content-end">
 	    			<div class="social-media">
 			    		<p class="mb-0 d-flex">
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+			    			<a href="https://www.facebook.com/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+			    			<a href="https://www.twitter.com/" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+			    			<a href="https://www.instagram.com/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+			    			<a href="https://www.dribbble.com/" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
 			    		</p>
 		        </div>
 	    		</div>
@@ -75,8 +75,8 @@
         </div>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item @yield('H_active')"><a href="index.php" class="nav-link">Home</a></li>
-	        	<li class="nav-item @yield('AD_active')"><a href="" class="nav-link">Admin login</a></li>
+	        	<li class="nav-item @yield('H_active')"><a href="/" class="nav-link">Home</a></li>
+	        	<li class="nav-item @yield('AD_active')"><a href="alogin" class="nav-link">Admin login</a></li>
 	        	<li class="nav-item @yield('Te_active')"><a href="" class="nav-link">Team login</a></li>
 	        	<li class="nav-item @yield('Gal_active')"><a href="gallery" class="nav-link">Gallery</a></li>
 	          <li class="nav-item @yield('Con_active')"><a href="contact" class="nav-link">Contact</a></li>
@@ -96,9 +96,9 @@
               <h2 class="logo"><a href="#">Pharmacy</a></h2>
               <p>This web service to make the operation of medicine sale more easier for pharmacy worker.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
-                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.twitter.com/"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/"><span class="fa fa-instagram"></span></a></li>
               </ul>
             </div>
           </div>

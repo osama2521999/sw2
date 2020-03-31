@@ -131,8 +131,8 @@
 -->	
 
 <div class="form-style-5">
-<form action="/alogin">
-
+<form action="/loginme" method="post">
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 <fieldset>
 <legend><span class="number">1</span> Admin Login </legend>
 <input type="email" name="field1" placeholder="username *">

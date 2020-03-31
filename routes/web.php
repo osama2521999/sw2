@@ -22,3 +22,13 @@ Route::get('/gallery', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/alogin', function () {	
+    return view('admin_login');
+});
+
+Route::post('/loginme','aloginC@login');
+Route::get('/successlogin', function () {
+    return view('successlogin');
+});
+

@@ -16,8 +16,8 @@
 		          <div class="col-md-6 ftco-animate">
 		          	<div class="text w-100">
 			            <h1 class="mb-4">Welcome to our Worker</h1>
-			            <p>Welcome to our Worker, you can login from this..</p>
-			            <p><a href="#" class="btn btn-primary">Worker login</a></p><!--put worker login page link here -->
+			            <p>Welcome to our Worker, you can login from this.</p>
+			            <p><a href="alogin" class="btn btn-primary">Worker login</a></p><!--put worker login page link here -->
 		            </div>
 		          </div>
 		        </div>
@@ -32,7 +32,7 @@
 		          	<div class="text w-100">
 			            <h1 class="mb-4">Welcome to our Manager</h1>
 			            <p>Welcome to our Manager, you can login from this.</p>
-			             <p><a href="#" class="btn btn-primary">Admin login</a></p><!--put admin login page link here -->
+			             <p><a href="alogin" class="btn btn-primary">Admin login</a></p><!--put admin login page link here -->
 		            </div>
 		          </div>
 		        </div>
