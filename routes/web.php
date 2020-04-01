@@ -28,6 +28,8 @@ Route::get('/alogin', function () {
 });
 
 
+Route::post('/successlogin','aloginC@login');
+
 Route::get('/successlogin', function () {
     return view('successlogin');
 });
