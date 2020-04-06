@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>Pharmacy Login System </title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
+@extends('layouts.index')
+
+@section('title','Home page')
+
+@section('contant')
+ 
+@section('ED_active','active')
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
   
   .impo
    {
@@ -85,17 +90,17 @@
 
    }
   </style>
- </head>
-    <body>
-   
-  <br>
-  <div class="box">
-   <h3 align="center">Login</h3></br >
 
-   @if(isset(Auth::user()->email))
-    <script>window.location="/main/successlogin";</script>
-   @endif
 
+  <center>
+    <div style="height: 400px;">
+    
+ <br>
+  <div class="box" style="margin-top:40px;">
+   <h3 align="center">Team Login</h3></br >
+
+
+<!--
    @if ($message = Session::get('error'))
    <div class="alert alert-danger alert-block">
     <button type="button" class="close" data-dismiss="alert">×</button>
@@ -112,16 +117,18 @@
      </ul>
     </div>
    @endif
+ -->
 
-   <form method="post" action="{{ url('/main/checklogin') }}">
-    {{ csrf_field() }}
+   <form method="post" action="/workerlogged">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  
     <div class="inputbox">
      <label>Enter Email</label>
-     <input type="email" name="email" class="form-control" />
+     <input type="email" name="field3" class="form-control" />
     </div>
     <div class="inputbox">
      <label>Enter Password</label>
-     <input type="password" name="password" class="form-control" />
+     <input type="password" name="field4" class="form-control" />
     </div>
     <div class="inputbox">
      <input type="submit" name="login" class="btn btn-primary" value="Login" />
@@ -129,5 +136,14 @@
    </form>
   
   </div>
- </body>
-</html>
+
+
+
+
+
+
+
+
+  </center>
+
+@endsection

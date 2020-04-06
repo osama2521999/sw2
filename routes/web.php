@@ -28,8 +28,21 @@ Route::get('/alogin', function () {
 });
 
 
-Route::post('/successlogin','aloginC@login');
-
-Route::get('/successlogin', function () {
-    return view('successlogin');
+Route::get('/wlogin', function () {	
+    return view('workers_login');
 });
+
+
+Route::get('/workerlogged', function () {
+    return view('wsuccesslogin');
+});
+
+Route::get('/adminlogged', function () {
+    return view('asuccesslogin');
+});
+
+
+Route::post('/adminlogged','aloginC@login');
+
+Route::post('/workerlogged','loginworker@login');
+

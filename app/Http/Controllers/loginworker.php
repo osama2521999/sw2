@@ -5,19 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 
-class aloginC extends Controller
+class loginworker extends Controller
 {
     //<?php
 
 
 
- public function loginworker(request $req){
+ public function login(request $req){
 
 $username=$req->input('field3');
 $password=$req->input('field4');
-$checklogin= DB::table('worker')->where(['username'=>$username,'password'=>$password])->get();
+$checklogin= DB::table('team')->where(['email'=>$username,'password'=>$password])->get();
+
+
 if(count($checklogin)>0){
-return redirect('/successlogin');
+return redirect('/workerlogged');
 }
 else{
 	return redirect('/wlogin');

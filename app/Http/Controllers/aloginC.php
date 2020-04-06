@@ -17,7 +17,7 @@ $username=$req->input('field1');
 $password=$req->input('field2');
 $checklogin= DB::table('admin')->where(['username'=>$username,'password'=>$password])->get();
 if(count($checklogin)>0){
-return redirect('/successlogin');
+return redirect('/adminlogged');
 }
 else{
 	return redirect('/alogin');
