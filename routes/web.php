@@ -23,26 +23,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/alogin', function () {	
-    return view('admin_login');
-});
 
-
-Route::get('/wlogin', function () {	
-    return view('workers_login');
-});
-
-
-Route::get('/workerlogged', function () {
-    return view('wsuccesslogin');
-});
-
-Route::get('/adminlogged', function () {
-    return view('asuccesslogin');
-});
-
-
-Route::post('/adminlogged','aloginC@login');
-
-Route::post('/workerlogged','loginworker@login');
-
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/registerworker', 'workerController@index');
+Route::post('registerworker','workerController@store');
+//Route::resource('/registerworker','workerController');

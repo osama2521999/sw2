@@ -76,8 +76,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item @yield('H_active')"><a href="index.php" class="nav-link">Home</a></li>
-	        	<li class="nav-item @yield('AD_active')"><a href="alogin" class="nav-link">Admin login</a></li>
-	        	<li class="nav-item @yield('Te_active')"><a href="wlogin" class="nav-link">Team login</a></li>
+	        	<li class="nav-item @yield('AD_active')"><a href="" class="nav-link">Admin login</a></li>
+	        	<li class="nav-item @yield('Te_active')"><a href="" class="nav-link">Team login</a></li>
 	        	<li class="nav-item @yield('Gal_active')"><a href="gallery" class="nav-link">Gallery</a></li>
 	          <li class="nav-item @yield('Con_active')"><a href="contact" class="nav-link">Contact</a></li>
 	        </ul>
