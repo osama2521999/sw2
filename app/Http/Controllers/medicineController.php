@@ -165,6 +165,53 @@ class medicineController extends Controller
     return redirect('/show_med');
   }
 
+  public function sale(Request $request){
+       
+        $var = $request;
+        $this->validate($var,[
+            'id'=>'required',
+            'Quantity'=>'required'
+            ]);
+
+            $med = $request->input('id');
+
+            if (medicine::where('id', $request->id)->exists())  {
+              $medicine =  medicine::find($med);
+              // $medicine -> quantity = ($medicine -> quantity)-($request->input('Quantity'));
+
+              if($request->input('Quantity') <= 0)
+              {
+                $statues = 'Medicines Quantity should be more than zero !!';
+                return view('main_functions.sale_med',compact('statues'));
+              }
+              if( $medicine -> quantity < $request->input('Quantity') )
+              {
+                $statues = 'Medicines Quantity is not enough for your request !!';
+                return view('main_functions.sale_med',compact('statues'));
+              }
+              else
+              {
+
+                $medicine -> quantity = ($medicine -> quantity)-($request->input('Quantity'));
+                $medicine->save();
+                $p = ($request->input('Quantity'))*($medicine -> price);
+                $statues = 'The Name of your request is '.$medicine -> name.
+                ', The Price for your request is $' . $p . 
+                ', Thank you !!';
+
+                if($medicine -> quantity <= 0){
+                  $medicine->delete();
+                }
+
+                return view('main_functions.sale_med',compact('statues'));
+              }
+
+           }else
+           {
+            $statues = 'This medicine Not Found !!';
+            return view('main_functions.sale_med',compact('statues'));
+           }    
+  }
     
     
 
