@@ -55,7 +55,14 @@ Route::post('registerworker','workerController@store');
 
 Route::get('/add_med', 'medicineController@index');
 Route::post('/add_med', 'medicineController@add');
-Route::get('/update_med', 'medicineController@index2');
-Route::post('/update_med', 'medicineController@update');
+
 Route::get('/delete_med', 'medicineController@index3');
 Route::post('/delete_med', 'medicineController@delete');
+
+Route::get('/update_med', 'medicineController@index2');
+Route::post('/update_med', 'medicineController@update');
+
+Route::get('/show_med', 'medicineController@index4');
+Route::get('/show_med', 'medicineController@show');
+Route::get('/show_med/{id}/delete', 'medicineController@destroy');
+

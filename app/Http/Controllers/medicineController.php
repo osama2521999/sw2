@@ -107,6 +107,64 @@ class medicineController extends Controller
            }    
     }
 
+    public function update(Request $request){
+      
+      $var = $request;
+        $this->validate($var,[
+            'id'=>'required',
+            'n_name'=>'required',
+            'Quantity'=>'required',
+            'year'=>'required',
+            'price'=>'required']);
+
+            $med = $request->input('id');
+
+            if (medicine::where('id', $request->id)->exists())  {
+              $medicine =  medicine::find($med);
+              $medicine -> name = $request->input('n_name');
+              $medicine -> quantity = $request->input('Quantity');
+              $medicine -> expire_year = $request->input('year');
+              $medicine -> price = $request->input('price');
+              
+              
+              if($request->input('year')<2020)
+              {
+                $statues = 'This medicine Already Expired !!';
+                return view('main_functions.update_med',compact('statues'));
+              }
+              if($request->input('Quantity') <= 0)
+              {
+                $statues = 'Medicines Quantity should be more than zero !!';
+                return view('main_functions.update_med',compact('statues'));
+              }
+              if($request->input('price') <= 0)
+              {
+                $statues = 'Medicines Price should be more than zero !!';
+                return view('main_functions.update_med',compact('statues'));
+              }
+
+              $medicine->save();
+              $statues = 'Done Successfully';
+              return view('main_functions.update_med',compact('statues'));
+
+           }else
+           {
+            $statues = 'This medicine Not Found !!';
+            return view('main_functions.update_med',compact('statues'));
+           }
+    }
+
+  public function show(){
+      $medicines =  medicine::all();
+      return view('main_functions.show_med',compact('medicines'));
+  }
+
+  public function destroy($id){
+    $id =  medicine::find($id);
+    $id->delete();
+    return redirect('/show_med');
+  }
+
     
     
 
