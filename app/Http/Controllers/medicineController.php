@@ -75,6 +75,29 @@ class medicineController extends Controller
             return view('main_functions.add_med',compact('statues'));
            }
     }
+    public function delete(Request $request){
+       
+      $var = $request;
+      $this->validate($var,[
+          'id'=>'required'
+          ]);
+
+          $med = $request->input('id');
+
+          if (medicine::where('id', $request->id)->exists())  {
+            $medicine =  medicine::find($med);
+            
+            $medicine->delete();
+
+            $statues = 'Done Successfully';
+            return view('main_functions.delete_med',compact('statues'));
+
+         }else
+         {
+          $statues = 'This medicine Not Found !!';
+          return view('main_functions.delete_med',compact('statues'));
+         }    
+  }
 
    
  

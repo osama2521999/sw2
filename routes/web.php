@@ -56,3 +56,6 @@ Route::post('registerworker','workerController@store');
 Route::get('/add_med', 'medicineController@index');
 Route::post('/add_med', 'medicineController@add');
 
+Route::get('/delete_med', 'medicineController@index3');
+Route::post('/delete_med', 'medicineController@delete');
+
