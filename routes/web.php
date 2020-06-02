@@ -77,3 +77,6 @@ Route::get('/A_view_report',function(){
 });
 Route::get('/A_view_report', 'workerController@show_A_report');
 Route::get('/A_view_report/{id}/delete', 'workerController@destroy2');
+
+Route::get('/A_make_report', 'reportcontroller@index');
+Route::post('/A_make_report', 'reportcontroller@send_report');

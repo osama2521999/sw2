@@ -7,7 +7,10 @@ use App\report;
 
 class reportcontroller extends Controller
 {
-    
+    public function index()
+    {
+      return view('reports.A_make_report');
+    }
     public function index2()
     {
       return view('reports.W_make_report');
@@ -28,11 +31,21 @@ class reportcontroller extends Controller
         $report -> receiver_id = $request->input('receiver_id');
         $report -> report = $request->input('report');
 
-        $report -> receiver = 'admin';
-        $report->save();
-        $statues = 'Done Successfully';
-        return view('Reports.W_make_report',compact('statues'));
-                                        
+
+        
+        if($request->input('sender') == 'admin')
+        {
+            $report->save();
+            $statues = 'Done Successfully';
+            return view('Reports.A_make_report',compact('statues'));
+        }
+        else
+        {
+            $report -> receiver = 'admin';
+            $report->save();
+            $statues = 'Done Successfully';
+            return view('Reports.W_make_report',compact('statues'));
+        }                                
 
     }
 
