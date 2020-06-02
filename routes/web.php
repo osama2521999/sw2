@@ -62,3 +62,6 @@ Route::post('/delete_med', 'medicineController@delete');
 Route::get('/update_med', 'medicineController@index2');
 Route::post('/update_med', 'medicineController@update');
 
+Route::get('/sale_med', 'medicineController@index5');
+Route::post('/sale_med', 'medicineController@sale');
+
