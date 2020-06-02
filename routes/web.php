@@ -65,9 +65,14 @@ Route::post('/update_med', 'medicineController@update');
 Route::get('/show_med', 'medicineController@index4');
 Route::get('/show_med', 'medicineController@show');
 Route::get('/show_med/{id}/delete', 'medicineController@destroy');
+
 Route::get('/sale_med', 'medicineController@index5');
 Route::post('/sale_med', 'medicineController@sale');
 
+
+Route::get('/Worker_report',function(){
+    return view('Reports.Worker_report');
+});
 
 Route::get('/W_make_report', 'reportcontroller@index2');
 Route::post('/W_make_report', 'reportcontroller@send_report');
@@ -80,3 +85,10 @@ Route::get('/A_view_report/{id}/delete', 'workerController@destroy2');
 
 Route::get('/A_make_report', 'reportcontroller@index');
 Route::post('/A_make_report', 'reportcontroller@send_report');
+
+
+Route::get('/W_view_report',function(){
+    return view('Reports.W_view_report');
+});
+Route::get('/W_view_report', 'workerController@show_W_report');
+Route::get('/W_view_report/{id}/delete', 'workerController@destroy1');

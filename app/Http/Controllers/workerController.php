@@ -68,9 +68,9 @@ class workerController extends Controller
                 $statues = 'check credintials plz :(!!';
                 return view('RegisterWorker',compact('statues'));
                 }
-            
+    }
 
-             public function show_A_report()
+    public function show_A_report()
     {
         $reports = report::select ('reports.report','reports.sender','reports.id','reports.created_at')
         ->where(['reports.receiver' =>  'admin'])
@@ -85,6 +85,22 @@ class workerController extends Controller
         return redirect('/A_view_report');
     }
           
+    public function show_W_report(){
+        
+        $reports = report::select ('reports.report','reports.sender','reports.id','reports.created_at')
+        // ->select('reports.report','reports.receiver_id')
+        ->join('workers','workers.id','=','reports.receiver_id')
+        ->where(['workers.active' =>  1 , 'reports.sender' =>  'admin'])
+        ->get();
+
+        return view('Reports.W_view_report',compact('reports'));
+
+    }
+
+    public function destroy1($id){
+        $id =  report::find($id);
+        $id->delete();
+        return redirect('/W_view_report');
     }
 
 }
