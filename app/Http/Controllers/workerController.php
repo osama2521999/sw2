@@ -69,7 +69,21 @@ class workerController extends Controller
                 return view('RegisterWorker',compact('statues'));
                 }
             
-            
+
+             public function show_A_report()
+    {
+        $reports = report::select ('reports.report','reports.sender','reports.id','reports.created_at')
+        ->where(['reports.receiver' =>  'admin'])
+        ->get();
+        return view('Reports.A_view_report',compact('reports'));
+    }
+
+
+     public function destroy2($id){
+        $id =  report::find($id);
+        $id->delete();
+        return redirect('/A_view_report');
+    }
           
     }
 

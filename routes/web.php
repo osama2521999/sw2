@@ -71,3 +71,9 @@ Route::post('/sale_med', 'medicineController@sale');
 
 Route::get('/W_make_report', 'reportcontroller@index2');
 Route::post('/W_make_report', 'reportcontroller@send_report');
+
+Route::get('/A_view_report',function(){
+    return view('Reports.A_view_report');
+});
+Route::get('/A_view_report', 'workerController@show_A_report');
+Route::get('/A_view_report/{id}/delete', 'workerController@destroy2');
