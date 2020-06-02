@@ -69,3 +69,5 @@ Route::get('/sale_med', 'medicineController@index5');
 Route::post('/sale_med', 'medicineController@sale');
 
 
+Route::get('/W_make_report', 'reportcontroller@index2');
+Route::post('/W_make_report', 'reportcontroller@send_report');
