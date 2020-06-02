@@ -8,8 +8,8 @@
 @section('navbar')
 
 	<li class="nav-item active"><a href="registerworker" class="nav-link">Rigister worker</a></li>
-	<li class="nav-item "><a href="A_make_report" class="nav-link">Make reports</a></li>
-	<li class="nav-item "><a href="A_view_report" class="nav-link">View reports</a></li>
+	<li class="nav-item "><a href="#" class="nav-link">Make reports</a></li>
+	<li class="nav-item "><a href="#" class="nav-link">View reports</a></li>
 	<li class="nav-item "><a href="aloggedout" class="nav-link">Logout</a></li>
 
 @endsection

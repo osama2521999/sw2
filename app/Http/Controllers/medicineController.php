@@ -190,6 +190,17 @@ public function sale(Request $request){
             return view('main_functions.sale_med',compact('statues'));
            }    
   }
+
+  public function show(){
+    $medicines =  medicine::all();
+    return view('main_functions.show_med',compact('medicines'));
+  }
+
+public function destroy($id){
+  $id =  medicine::find($id);
+  $id->delete();
+  return redirect('/show_med');
+}
    
    
  
